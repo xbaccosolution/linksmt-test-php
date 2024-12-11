@@ -1,9 +1,9 @@
-# Attiva il modulo di riscrittura
 RewriteEngine On
 
-# Verifica se il file o la directory richiesti esistono
+# Reindirizza tutte le richieste al file index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
 
 # Reindirizza tutto a "public/index.php"
 RewriteRule ^(.*)$ public/index.php [L]
