@@ -1,0 +1,17 @@
+# Attiva il modulo di riscrittura
+RewriteEngine On
+
+# Verifica se il file o la directory richiesti esistono
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Reindirizza tutto a "public/index.php"
+RewriteRule ^(.*)$ public/index.php [L]
+
+# Blocca l'accesso a directory sensibili
+RewriteRule ^(app|config|vendor|tests|src|private) - [F,L]
+
+# Impedisce l'accesso al file .htaccess stesso
+<FilesMatch "^\.htaccess$">
+    Require all denied
+</FilesMatch>
