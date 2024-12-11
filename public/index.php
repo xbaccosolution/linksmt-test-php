@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../app/Controllers/LoginController.php';
 require_once __DIR__ . '/../app/Controllers/BreweryController.php';
 require_once __DIR__ . '/../app/Middleware/AuthMiddleware.php';
